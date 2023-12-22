@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  django:
+    build: .
+    ports:
+      - ${DJANGO_PORT}:${DJANGO_PORT}
+    volumes:
+      - ${VOLUME_PATH}
+    depends_on:
+      - postgres
+    environment:
+      - DJANGO_SECRET_KEY
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+      - POSTGRES_PORT
+
+  postgres:
+    image: postgres:latest
+    container_name: onlyPost-postgres
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+      - POSTGRES_PORT
