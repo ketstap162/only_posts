@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  <h1>Register</h1>
+
+  <form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Register" />
+  </form>
+{% endblock %}
