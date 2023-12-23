@@ -1,0 +1,16 @@
+:root {
+  --primary: #F6CCD4;
+  --secondary: #ECCED7;
+  --regular: #000000;
+  --detail: #E4D2DD;
+
+  --primary-dark: #C8DDF3;
+  --secondary-dark: #CFD7E7;
+  --regular-dark: #232323;
+  --detail-dark: #D7D7E5;
+}
+
+
+.background-main{
+    background-color: var(--primary);
+}
