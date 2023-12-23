@@ -1,15 +1,16 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+
+from auth_app.forms import CustomUserCreationForm
 
 
 def register_view(request):
-    form = UserCreationForm()
+    form = CustomUserCreationForm()
 
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("home")
+            return redirect("Post:home")
 
     context = {"form": form}
     return render(request, "registration/register.html", context)
@@ -19,4 +20,4 @@ def register_view(request):
 #     if not request.user.is_authenticated:
 #         return redirect("login")
 #
-#     return redirect("VPN:home")
+#     return redirect("Post:home")
