@@ -1,3 +1,16 @@
-<div>
-    NAVBAR
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/components/navbar.css' %}">
+<div class="navbar-main">
+  <div class="navbar-left">
+    <a href="{% url 'Post:home' %}" class="navbar-block">Home</a>
+  </div>
+  <div class="navbar-right">
+    {% if user.is_authenticated %}
+      <div class="navbar-block">{{ user.username }}</div>
+      <a href="{% url 'logout' %}" class="navbar-block">Log Out</a>
+    {% else %}
+      <a href="{% url 'register' %}" class="navbar-block">Register</a>
+      <a href="{% url 'login' %}" class="navbar-block">Log In</a>
+    {% endif %}
+  </div>
 </div>
