@@ -1,0 +1,12 @@
+{% for post in posts %}
+  <div>
+    <div>{{ post.user.username }}</div>
+    <div>{{ post.text }}</div>
+    {% if post.attachment %}
+      <div>{{ post.attachment }}</div>
+    {% endif %}
+    <div>
+      Post control pannel
+    </div>
+  </div>
+{% endfor %}

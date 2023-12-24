@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div>
+    {% if posts %}
+      {% include "posts/components/post-list.html" %}
+    {% else %}
+      No posts created
+    {% endif %}
+  </div>
+{% endblock %}
