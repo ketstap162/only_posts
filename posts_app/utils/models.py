@@ -27,7 +27,7 @@ def check_text_file_size(text_file_path: str, max_file_size: int = 100 * 1024):
 
 def process_attachment(
         file_path: str,
-        allowed_text_file_extensions: tuple = ("txt"),
+        allowed_text_file_extensions: tuple = ("txt",),
         allowed_image_extensions: tuple = (".jpg", ".jpeg", ".gif", ".png"),
 ):
     _, extension = os.path.splitext(file_path)
