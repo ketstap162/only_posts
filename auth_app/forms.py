@@ -17,3 +17,8 @@ class CustomUserCreationForm(UserCreationForm):
         if get_user_model().objects.filter(email=email).exists():
             raise forms.ValidationError("This email address is already in use.")
         return email
+
+
+class CustomLoginForm(forms.Form):
+    email = forms.CharField(label="Email")
+    password = forms.CharField(label="Password", widget=forms.PasswordInput)
