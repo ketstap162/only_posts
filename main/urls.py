@@ -19,13 +19,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from auth_app.views import register_view
+from auth_app.views import register_view, login_view, logout_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("posts_app.urls", namespace="Post")),
-    path("accounts/", include("django.contrib.auth.urls")),
-    path("accounts/register/", register_view, name="register")
+    path("register/", register_view, name="register"),
+    path("login/", login_view, name="login"),
+    path("logout/", logout_view, name="logout")
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
