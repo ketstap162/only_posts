@@ -1,16 +1,36 @@
 :root {
   --primary: #F6CCD4;
-  --secondary: #ECCED7;
-  --regular: #000000;
-  --detail: #E4D2DD;
+  --secondary: #FAE5E9;
+  --regular: #FFF;
+  --detail: #FCEFF1;
 
   --primary-dark: #C8DDF3;
   --secondary-dark: #CFD7E7;
   --regular-dark: #232323;
   --detail-dark: #D7D7E5;
+
+  --text-color: black;
 }
 
 
-.background-main{
-    background-color: var(--primary);
+.body-main{
+  background-color: var(--regular);
+  font-family: 'Encode Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.body-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-content{
+    background-color: var(--detail);
+    padding: 20px;
+    margin: 10px;
+    border: 4px solid var(--primary);
+    border-radius: 25px;
+    width: 700px;
 }
