@@ -1,4 +1,5 @@
 :root {
+/*
   --primary: #F6CCD4;
   --secondary: #FAE5E9;
   --regular: #FFF;
@@ -11,6 +12,13 @@
   --detail-dark: #D7D7E5;
 
   --text-color: black;
+*/
+
+  --primary: #BFA07A;
+  --secondary: #F2D7B6;
+  --regular: #FFF;
+  --detail: #FFE3C1;
+  --primary-text: #594832;
 }
 
 

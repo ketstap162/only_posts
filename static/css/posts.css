@@ -49,28 +49,25 @@
 }
 
 .post-panel{
-  padding: 5px 20px;
+  padding: 0 20px;
   border-top: 2px solid var(--primary)
 }
 
 .post-panel-left{
-
+  float: left;
 }
 
 .post-panel-right{
-
+  float: right;
 }
 
 .post-panel-control{
-  display: inline;
+  display: inline-block;
   padding: 5px 10px;
-  margin: 20px 0;
   width: auto;
-  line-height: 30px;
   background-color: var(--regular);
   color: var(--primary-text);
   text-align: center;
   text-decoration: none;
-  border: 2px solid var(--primary);
   border-radius: 25px;
 }
