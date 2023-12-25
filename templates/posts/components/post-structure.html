@@ -17,9 +17,15 @@
   {% endif %}
 
     <div class="post-panel">
-      <a href="{% url 'Post:home' %}" class="post-panel-control">Reply</a>
-      <a href="{% url 'Post:home' %}" class="post-panel-control">Like</a>
-      <a href="{% url 'Post:home' %}" class="post-panel-control">Dislike</a>
+      <div class="post-panel-left">
+        <a href="{% url 'Post:home' %}" class="post-panel-control">Reply</a>
+      </div>
+
+      <div class="post-panel-right">
+        {% if post.owner == user %}
+          <a href="" class="post-panel-control">Delete</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
