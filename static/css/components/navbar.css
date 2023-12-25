@@ -4,7 +4,16 @@
   margin: 10px;
   border: 4px solid var(--primary);
   border-radius: 50px;
+  height: auto;
+}
+
+.navbar-header{
   width: 800px;
+}
+
+.navbar-secondary{
+  width: auto;
+  height: 20px;
 }
 
 .navbar-left{
@@ -21,7 +30,7 @@
   width: auto;
   height: 25px;
   background-color: var(--regular);
-  color: var(--primary);
+  color: var(--primary-text);
   text-align: center;
   text-decoration: none;
   border: 2px solid var(--primary);
