@@ -1,0 +1,25 @@
+{% load static %}
+<div class="post-main">
+  <div class="post-owner-field">
+    <div class="post-owner">{{ post.owner.username }}</div>
+  </div>
+
+  <div class="post-body">
+  <div class="post-text">{{ post.clean_text|safe }}</div>
+  {% if post.attachment %}
+    <div>
+      {% if post.attachment_type == "image" %}
+        <img src="{{ post.attachment.url }}" alt="image" class="post-image">
+      {% elif post.attachment_type == "txt" %}
+        <div>{{ post.attachment }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+    <div class="post-panel">
+      <a href="{% url 'Post:home' %}" class="post-panel-control">Reply</a>
+      <a href="{% url 'Post:home' %}" class="post-panel-control">Like</a>
+      <a href="{% url 'Post:home' %}" class="post-panel-control">Dislike</a>
+    </div>
+  </div>
+</div>

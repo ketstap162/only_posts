@@ -1,12 +1,7 @@
-{% for post in posts %}
-  <div>
-    <div>{{ post.user.username }}</div>
-    <div>{{ post.text }}</div>
-    {% if post.attachment %}
-      <div>{{ post.attachment }}</div>
-    {% endif %}
-    <div>
-      Post control pannel
-    </div>
-  </div>
-{% endfor %}
+{% if posts %}
+  {% for post in posts %}
+    {% include "posts/components/post-structure.html" with post=post %}
+  {% endfor %}
+{% else %}
+  No posts created
+{% endif %}

@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/posts.css' %}">
   <div>
-    {% if posts %}
-      {% include "posts/components/post-list.html" %}
-    {% else %}
-      No posts created
-    {% endif %}
+    {% include "posts/components/post-navbar.html" %}
+    {% include "posts/components/post-list.html" %}
   </div>
 {% endblock %}
