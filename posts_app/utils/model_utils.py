@@ -2,11 +2,13 @@ import os
 
 from PIL import Image
 
+from posts_app.posts_settings import ALLOWED_TEXT_FILE_EXTENSIONS, ALLOWED_IMAGE_EXTENSIONS
+
 
 def attachment_file_path(instance, filename) -> str:
     name, extension = os.path.splitext(filename)
     filename = f"{name}{extension}"
-    return os.path.join(f"uploads/{instance.id}/attachments/", filename)
+    return os.path.join(f"uploads/{instance.owner.id}/attachments/", filename)
 
 
 def process_image(image_path: str, max_width: int = 320, max_height: int = 240):
@@ -25,15 +27,14 @@ def check_text_file_size(text_file_path: str, max_file_size: int = 100 * 1024):
         raise ValueError("The size of the text file exceeds the maximum allowed size (100 KB).")
 
 
-def process_attachment(
+def check_attachment_extensions(
         file_path: str,
-        allowed_text_file_extensions: tuple = ("txt",),
-        allowed_image_extensions: tuple = (".jpg", ".jpeg", ".gif", ".png"),
+        allowed_extensions: tuple = None,
 ):
     _, extension = os.path.splitext(file_path)
 
-    if extension in allowed_text_file_extensions:
-        check_text_file_size(file_path)
+    if not allowed_extensions:
+        allowed_extensions = ALLOWED_TEXT_FILE_EXTENSIONS + ALLOWED_IMAGE_EXTENSIONS
 
-    elif extension not in allowed_image_extensions:
+    if extension not in allowed_extensions:
         raise ValueError("The file does not match an allowed extension.")
