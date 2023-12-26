@@ -1,5 +1,5 @@
-# only_posts
-OnlyPosts Service
+# OnlyPost Service
+
 ![Logo of the project](https://i.ibb.co/zhnXVvJ/icon.png)
 
 
