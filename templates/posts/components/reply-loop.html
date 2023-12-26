@@ -1,0 +1,3 @@
+{% for reply in post.replies.all %}
+{% include "posts/components/reply-structure.html" with post=reply is_reply=True %}
+{% endfor %}

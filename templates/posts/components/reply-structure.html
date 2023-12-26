@@ -1,0 +1,40 @@
+{% load static %}
+
+<div class="reply-wrap">
+  <div class="reply-pointer">
+    <div class="reply-pointer-second"></div>
+  </div>
+
+  <div class="reply-main">
+    <div class="post-owner-field">
+      <div class="post-owner">{{ post.owner.username }} <div class="reply-mark">replied</div></div>
+    </div>
+
+    <div class="post-body">
+      <div class="post-text">{{ post.clean_text|safe }}</div>
+      {% if post.attachment %}
+        <div>
+        {% if post.attachment_type == "image" %}
+          <img src="{{ post.attachment.url }}" alt="image" class="post-image">
+        {% elif post.attachment_type == "txt" %}
+          <textarea readonly class="post-txt">{{ post.text_file_content_as_html }}</textarea>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <div class="post-panel">
+        <div class="post-panel-left">
+          <a href="{% url 'Post:reply' pk=post.pk %}" class="post-panel-control">Reply</a>
+        </div>
+
+        <div class="post-panel-right">
+          {% if post.owner == user %}
+            <a href="{% url 'Post:delete' pk=post.pk %}" class="post-panel-control">Delete</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% include "posts/components/recursive_replies.html" %}
+  </div>
+</div>
