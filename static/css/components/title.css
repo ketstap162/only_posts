@@ -1,0 +1,14 @@
+.title-main{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--secondary);
+  letter-spacing: 4px;
+  text-shadow:
+    -1px -1px 0 var(--primary),
+    1px -1px 0 var(--primary),
+    -1px 1px 0 var(--primary),
+    1px 1px 0 var(--primary);
+  text-decoration: none;
+}

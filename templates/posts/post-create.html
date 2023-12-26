@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if reply_to %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/posts.css' %}">
+    {% include "posts/components/post-structure.html" with post=reply_to %}
+    <h2>Reply</h2>
+  {% else %}
+  <h2>Create Post</h2>
+  {% endif %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

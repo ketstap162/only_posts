@@ -1,0 +1,136 @@
+.post-main{
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+
+.post-body{
+  border: 2px solid var(--primary);
+  border-radius: 0 15px 15px 15px;
+  background-color: var(--secondary);
+}
+
+.post-owner-field{
+  margin: 0
+  padding: 0
+}
+
+.post-owner{
+  padding: 5px 10px 5px 10px;
+  padding-bottom: 0;
+  margin-top: 5px;
+  float: left;
+  width: auto;
+  height: 25px;
+  background-color: var(--regular);
+  color: var(--primary-text);
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  border-radius: 12px 15px 0 0;
+  border-bottom: none;
+}
+
+.post-text{
+  padding: 20px 15px 15px 15px;
+  margin: 10px 5px 5px 5px;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  background-color: var(--regular);
+  overflow: auto;
+}
+
+.post-image{
+  display: block;
+  width: auto;
+  margin: 5px 10px 10px 10px;
+  border: 4px solid var(--primary);
+  border-radius: 10px;
+  background-color: var(--regular);
+}
+
+.post-txt{
+  display: block;
+  width: 320px;
+  height: 120px;
+  max-width: 650px;
+  margin: 5px 10px 10px 10px;
+  padding: 10px;
+  border: 4px solid var(--primary);
+  border-radius: 10px;
+  background-color: var(--regular);
+  overflow: auto;
+  outline: none;
+}
+
+.post-panel{
+  padding: 0 20px;
+  border-top: 2px solid var(--primary)
+}
+
+.post-panel-left{
+  float: left;
+}
+
+.post-panel-right{
+  float: right;
+}
+
+.post-panel-control{
+  display: inline-block;
+  padding: 5px 10px;
+  width: auto;
+  background-color: var(--regular);
+  color: var(--primary-text);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.reply-block{
+   margin: 0 20px;
+   max-height: 200px;
+   justify-content: center;
+   overflow-x: auto;
+   overflow-y: auto;
+}
+
+.reply-post{
+  display: flex;
+  flex-direction: row;
+}
+
+.reply-pointer{
+  width: 20px;
+  margin: 0 10px;
+  border-left: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+
+}
+
+.reply-pointer-second{
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  border-left: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  border-radius: 0 0 0 10px;
+}
+
+.reply-wrap{
+  display: flex;
+  flex-direction: row;
+}
+
+.reply-main{
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.reply-mark{
+  display: inline;
+  font-style: italic;
+  font-size: 0.8em;
+}

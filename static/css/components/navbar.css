@@ -1,0 +1,90 @@
+.navbar-main{
+  background-color: var(--secondary);
+  padding: 20px;
+  margin: 10px;
+  border: 4px solid var(--primary);
+  border-radius: 50px;
+  height: auto;
+}
+
+.navbar-header{
+  width: 800px;
+}
+
+.navbar-secondary{
+  width: auto;
+  height: 20px;
+}
+
+.navbar-left{
+  float: left;
+}
+
+.navbar-right{
+  float: right;
+}
+
+.navbar-block{
+  display: inline;
+  padding: 10px;
+  width: auto;
+  height: 25px;
+  background-color: var(--regular);
+  color: var(--primary-text);
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+}
+
+
+.navbar-block-non-active{
+  display: inline;
+  padding: 10px;
+  width: auto;
+  height: 25px;
+  color: var(--primary-text);
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+}
+
+.navbar-form{
+  display: flex;
+  flex-direction: row;
+}
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.tab-input {
+  display: none;
+}
+
+.tab-label {
+  display: block;
+  padding: 0 5px;
+  margin: 0 2px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+}
+
+.tab-label:hover {
+  background: var(--primary);
+}
+
+.tab-input:checked + .tab-label {
+  background: var(--regular);
+  color: var(--primary-text);
+}
+
+.navbar-form-input{
+  margin-left: 10px;
+  width: 70px;
+}

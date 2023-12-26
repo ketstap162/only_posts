@@ -1,0 +1,12 @@
+{% if post.replies.exists %}
+    {% if not is_reply %}
+      <div class="reply-block">
+    {% endif %}
+
+    {% include "posts/components/reply-loop.html" %}
+
+    {% if not is_reply %}
+      </div>
+    {% endif %}
+        
+{% endif %}
