@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
 
-from posts_app.posts_settings import ALLOWED_IMAGE_EXTENSIONS
+from posts_app.posts_settings import ALLOWED_IMAGE_EXTENSIONS, ALLOWED_TEXT_FILE_EXTENSIONS
 from posts_app.utils.model_utils import attachment_file_path, check_attachment_extensions
 
 
