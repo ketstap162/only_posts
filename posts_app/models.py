@@ -53,7 +53,6 @@ class Post(TimeStampedModel):
         with open(self.attachment.path, "r") as file:
             file_content = file.read()
 
-        print(file_content)
         return file_content
 
     @property
