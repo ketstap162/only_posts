@@ -45,6 +45,22 @@ class Post(TimeStampedModel):
         elif extension in ALLOWED_TEXT_FILE_EXTENSIONS:
             return "txt"
 
+    @property
+    def text_file_content(self) -> str:
+        if self.attachment_type != "txt":
+            raise ValueError("Attachment is not text file.")
+
+        with open(self.attachment.path, "r") as file:
+            file_content = file.read()
+
+        print(file_content)
+        return file_content
+
+    @property
+    def text_file_content_as_html(self):
+        content = self.text_file_content
+        return content.replace("\n", "\r\n")
+
     def clean_text(self):
         allowed_tags = ["a", "code", "i", "strong"]
 
