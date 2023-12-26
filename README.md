@@ -11,7 +11,7 @@ which has the following features:
 - registration, email authentication and authorization systems;
 - possibility to create posts with attachments (image and text file);
 - the ability to reply to posts;
-- responses are rendered recursively;
+- replies are rendered recursively;
 - post sorting and filtering;
 - minimalistic user interface.
 
