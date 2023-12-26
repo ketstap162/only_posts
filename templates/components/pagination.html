@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/components/pagination.css' %}">
+
+<div class="pagination-main">
+    <span class="step-links">
+        {% if pagination_object.has_previous %}
+            <a href="?page=1" class="pagination-block">&laquo; first</a>
+            <a href="?page={{ posts.previous_page_number }}" class="pagination-block">previous</a>
+        {% endif %}
+
+        <span class="pagination-info">
+            Page {{ pagination_object.number }} of {{ pagination_object.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}" class="pagination-block">next</a>
+            <a href="?page={{ posts.paginator.num_pages }}" class="pagination-block">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
