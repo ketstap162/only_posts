@@ -5,6 +5,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/posts.css' %}">
   <div>
     {% include "posts/components/post-navbar.html" %}
+    {% include "components/pagination.html" with pagination_object=posts%}
     {% include "posts/components/post-list.html" %}
+    {% include "components/pagination.html" with pagination_object=posts%}
   </div>
 {% endblock %}
