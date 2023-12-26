@@ -37,13 +37,12 @@ class Post(TimeStampedModel):
     objects = models.Manager()
 
     @property
-    def attachment_type(self):
+    def attachment_type(self) -> str:
         _, extension = os.path.splitext(self.attachment.path)
+
         if extension in ALLOWED_IMAGE_EXTENSIONS:
-            print("image")
             return "image"
-        elif extension in ALLOWED_IMAGE_EXTENSIONS:
-            print("txt")
+        elif extension in ALLOWED_TEXT_FILE_EXTENSIONS:
             return "txt"
 
     def clean_text(self):
