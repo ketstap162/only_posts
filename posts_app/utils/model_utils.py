@@ -2,7 +2,8 @@ import os
 
 from PIL import Image
 
-from posts_app.posts_settings import ALLOWED_TEXT_FILE_EXTENSIONS, ALLOWED_IMAGE_EXTENSIONS
+from posts_app.posts_settings import ALLOWED_TEXT_FILE_EXTENSIONS, ALLOWED_IMAGE_EXTENSIONS, IMAGE_MAX_WIDTH, \
+    IMAGE_MAX_HEIGHT
 
 
 def attachment_file_path(instance, filename) -> str:
@@ -11,7 +12,11 @@ def attachment_file_path(instance, filename) -> str:
     return os.path.join(f"uploads/{instance.owner.id}/attachments/", filename)
 
 
-def process_image(image_path: str, max_width: int = 320, max_height: int = 240):
+def process_image(
+        image_path: str,
+        max_width: int = IMAGE_MAX_WIDTH,
+        max_height: int = IMAGE_MAX_HEIGHT
+) -> None:
     with Image.open(image_path) as img:
         width, height = img.size
 
